@@ -1,0 +1,27 @@
+@if(!investmentDetails){
+  <p class="center">Please enter some values and Press Calculate button</p>
+} @else {
+  <table>
+    <thead>
+    <tr>
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (data of investmentDetails;track data.year){
+        <tr>
+          <td>{{data.year}}</td>
+          <td>{{data.valueEndOfYear | currency:'CAD' }}</td>
+          <td>{{data.interest | currency:'CAD' }}</td>
+          <td>{{data.totalInterest | currency:'CAD' }}</td>
+          <td>{{data.totalAmountInvested | currency: 'CAD'}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+
