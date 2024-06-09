@@ -12,7 +12,7 @@
     </tr>
     </thead>
     <tbody>
-      @for (data of investmentDetails;track data.year){
+      @for (data of investmentDetails();track data.year){
         <tr>
           <td>{{data.year}}</td>
           <td>{{data.valueEndOfYear | currency:'CAD' }}</td>
